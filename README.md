@@ -1,3 +1,29 @@
+# Important Announcement
+
+Hello everyone,
+
+First, let's look at the problems:
+1. I don't use mumble anymore, working on a bot you don't use produces a leak of testing and motivation.
+2. I don't code like before, my hobbies have changed, I maintain stuff I still use, but no real coding anymore.
+3. Botamusique is monolitique
+
+I've been trying to make a POC to change the monolitique part, to have a fully modulable bot, with asyncio and and feature/backend as plugins. But asyncio was blocking for me, especially to make the bot with fastapi, discord api / pymumble. It's 2 async loop and I don't have the knowledge to make it work.
+To be transparent, botamusique was the biggest project I've done, one of the funniest. Thanks @TerryGeng for joining the adventure.
+
+I don't think I will be looking for a maintainer, the monolithic part of this project is not something that needs to be maintained.
+
+**This projet will be archived.**
+
+BUT If someone want to rewrite a bot, I'm ready to help with the projet : what to do, Errors to avoid, Design/architecture help (but no code). I think **_8 years_** on this projet (have start with [this small projet](https://github.com/azlux/MumbleRadioPlayer/commit/56ca276c5519fcb0e1af043beb043202e65c2cca)) can help someone.
+
+It was really funny, thank all, for your support !
+
+See you in space cowboy.
+
+-- Azlux
+
+-----
+
 <div align="center">
 <img src="static/image/logo.png" alt="botamusique" width="200px" />
 <h1>botamusique</h1>
@@ -50,7 +76,7 @@ Predicted functionalities will be those people would expect from any classic mus
 ### Docker
 See https://github.com/azlux/botamusique/wiki/Docker-install
 
-Both stable and nightly (developing) build are available!
+Both stable and nightly (developing) builds are available!
 
 ### Manual install
 
@@ -96,7 +122,7 @@ python3 -m venv venv
 venv/bin/pip install wheel
 venv/bin/pip install -r requirements.txt
 (cd web && npm install && npm run build)
-venv/bin/python3 ./scripts/translate_templates.py --lang-dir lang/ --template-dir templates/
+venv/bin/python3 ./scripts/translate_templates.py --lang-dir lang/ --template-dir web/templates/
 ```
 </details>
 
@@ -120,7 +146,7 @@ host = 127.0.0.1
 port = 64738
 ```
 
-2. You need to specify a folder that stores your music files. The bot will look for music and upload files into that folder. You also need to specify a temporary folder to store music files download from URLs.
+2. You need to specify a folder that stores your music files. The bot will look for music and upload files into that folder. You also need to specify a temporary folder to store music file downloads from URLs.
 ```
 [bot]
 music_folder = music_folder/
@@ -200,7 +226,7 @@ The web interface can be used if you'd like an intuitive way of interacting with
 
 ## Update
 
-If you enable `audo_check_update`, the bot will check for updates every time it starts.
+If you enable `auto_check_update`, the bot will check for updates every time it starts.
 If you are using the recommended install, you can send `!update` to the bot (command by default).
 
 If you are using git, you need to update manually:
